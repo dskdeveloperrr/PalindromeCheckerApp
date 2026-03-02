@@ -1,8 +1,10 @@
 /*
 * @author Developer
-* * @version 5.0
+* * @version 6.0
 * */
 import java.util.Scanner;
+import java.util.Queue;
+import java.util.LinkedList;
 import java.util.Stack;
 
 public class PalindromeCheckerApp {
@@ -14,18 +16,20 @@ public class PalindromeCheckerApp {
         System.out.print("Enter a word: ");
         String input = sc.nextLine();
 
+        Queue<Character> queue = new LinkedList<>();
         Stack<Character> stack = new Stack<>();
 
-        // Push all characters into stack
+        // Insert into both queue and stack
         for(char c : input.toCharArray()) {
+            queue.add(c);
             stack.push(c);
         }
 
         boolean isPalindrome = true;
 
-        // Pop and compare
-        for(char c : input.toCharArray()) {
-            if(c != stack.pop()) {
+        // Compare dequeue vs pop
+        while(!queue.isEmpty()) {
+            if(queue.remove() != stack.pop()) {
                 isPalindrome = false;
                 break;
             }
