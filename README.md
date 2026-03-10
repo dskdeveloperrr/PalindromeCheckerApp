@@ -1,14 +1,13 @@
 # PalindromeCheckerApp
-**UC9 - Recursive Palindrome Checker**
+**UC10 - Case-Insensitive & Space-Ignored Palindrome**
 
-* The objective of UC9 is to check whether a string is a palindrome using recursion.
+* The objective of UC10 is to check a palindrome ignoring spaces, symbols, and letter case.
 * The program starts from the main() method.
-* The user enters a word using the Scanner class.
-* A recursive function is called to check the palindrome.
-* The function compares characters from the start and end positions.
-* If the characters match, the function calls itself with the next inner characters.
-* The recursion continues until the start index meets or crosses the end index.
-* If all characters match, the string is a palindrome.
-* If any characters do not match, the function returns false.
-* This use case demonstrates divide-and-conquer using recursion.
+* The user enters a sentence using the Scanner class.
+* The string is normalized by removing spaces and special characters.
+* All characters are converted to lowercase for case-insensitive comparison.
+* The program compares characters from the beginning and end of the normalized string.
+* If all characters match, the input is a palindrome.
+* If any characters do not match, it is not a palindrome.
+* This use case introduces string preprocessing and regular expressions.
 * The main class used is PalindromeCheckerApp.
