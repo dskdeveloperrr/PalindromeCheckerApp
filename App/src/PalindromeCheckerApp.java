@@ -1,8 +1,10 @@
 /*
 * @author Developer
-* * @version 11.0
+* * @version 12.0
 * */
 import java.util.Scanner;
+import java.util.Stack;
+
 
 public class PalindromeCheckerApp {
 
@@ -13,36 +15,43 @@ public class PalindromeCheckerApp {
         System.out.print("Enter a word: ");
         String input = sc.nextLine();
 
-        // Create service object
-        PalindromeService service = new PalindromeService();
+        // Choose strategy
+        PalindromeStrategy strategy = new StackStrategy();
 
-        boolean isPalindrome = service.checkPalindrome(input);
+        boolean result = strategy.check(input);
 
         System.out.println("Input: " + input);
-        System.out.println("Is Palindrome? : " + isPalindrome);
+        System.out.println("Is Palindrome? : " + result);
 
         sc.close();
     }
 }
-class PalindromeService {
+interface PalindromeStrategy {
+    boolean check(String input);
+}
 
-    /**
-     * Checks whether the input string is a palindrome.
-     */
-    public boolean checkPalindrome(String input) {
+/**
+ * CLASS – StackStrategy
+ * Implements palindrome validation using Stack.
+ */
+class StackStrategy implements PalindromeStrategy {
 
-        int start = 0;
-        int end = input.length() - 1;
+    @Override
+    public boolean check(String input) {
 
-        // Compare characters moving inward
-        while (start < end) {
+        Stack<Character> stack = new Stack<>();
 
-            if (input.charAt(start) != input.charAt(end)) {
+        // Push characters to stack
+        for (char c : input.toCharArray()) {
+            stack.push(c);
+        }
+
+        // Compare characters with popped values
+        for (char c : input.toCharArray()) {
+
+            if (c != stack.pop()) {
                 return false;
             }
-
-            start++;
-            end--;
         }
 
         return true;
