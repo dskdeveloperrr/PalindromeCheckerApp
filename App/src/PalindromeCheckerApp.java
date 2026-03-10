@@ -1,9 +1,8 @@
 /*
 * @author Developer
-* * @version 8.0
+* * @version 9.0
 * */
 import java.util.Scanner;
-import java.util.LinkedList;;
 
 public class PalindromeCheckerApp {
 
@@ -14,27 +13,28 @@ public class PalindromeCheckerApp {
         System.out.print("Enter a word: ");
         String input = sc.nextLine();
 
-        LinkedList<Character> list = new LinkedList<>();
-
-        // Add each character to the LinkedList
-        for (char c : input.toCharArray()) {
-            list.add(c);
-        }
-
-        boolean isPalindrome = true;
-
-        // Compare first and last elements
-        while (list.size() > 1) {
-
-            if (!list.removeFirst().equals(list.removeLast())) {
-                isPalindrome = false;
-                break;
-            }
-        }
+        boolean isPalindrome = check(input, 0, input.length() - 1);
 
         System.out.println("Input: " + input);
         System.out.println("Is Palindrome? : " + isPalindrome);
 
         sc.close();
+    }
+
+    // Recursive function to check palindrome
+    private static boolean check(String s, int start, int end) {
+
+        // Base condition
+        if (start >= end) {
+            return true;
+        }
+
+        // If characters do not match
+        if (s.charAt(start) != s.charAt(end)) {
+            return false;
+        }
+
+        // Recursive call
+        return check(s, start + 1, end - 1);
     }
 }
