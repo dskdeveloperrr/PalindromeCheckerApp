@@ -1,14 +1,14 @@
 # PalindromeCheckerApp
-**UC10 - Case-Insensitive & Space-Ignored Palindrome**
+**UC11 - Object-Oriented Palindrome Service**
 
-
-* The objective of UC10 is to check a palindrome ignoring spaces, symbols, and letter case.
+* The objective of UC11 is to implement palindrome checking using object-oriented design.
 * The program starts from the main() method.
-* The user enters a sentence using the Scanner class.
-* The string is normalized by removing spaces and special characters.
-* All characters are converted to lowercase for case-insensitive comparison.
-* The program compares characters from the beginning and end of the normalized string.
-* If all characters match, the input is a palindrome.
+* The user enters a word using the Scanner class.
+* A PalindromeService class is created to contain the palindrome logic.
+* The method checkPalindrome() performs the palindrome validation.
+* The main class calls this service method to check the result.
+* Characters are compared from start and end positions moving inward.
+* If all characters match, the string is a palindrome.
 * If any characters do not match, it is not a palindrome.
-* This use case introduces string preprocessing and regular expressions.
+* This use case demonstrates encapsulation and separation of concerns in OOP.
 * The main class used is PalindromeCheckerApp.
