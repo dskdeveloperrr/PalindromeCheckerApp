@@ -1,13 +1,13 @@
 # PalindromeCheckerApp
-**UC12 - Strategy Pattern for Palindrome Algorithms**
+**UC13 - Performance Comparison**
 
-* The objective of UC12 is to implement palindrome checking using the Strategy Design Pattern.
+* The objective of UC13 is to measure the performance of palindrome validation.
 * The program starts from the main() method.
 * The user enters a word using the Scanner class.
-* A PalindromeStrategy interface defines the contract for palindrome algorithms.
-* Different strategies can implement this interface.
-* In this use case, StackStrategy is implemented using a stack.
-* The selected strategy is injected at runtime.
-* The main program calls the strategy's check() method to validate the palindrome.
-* This demonstrates polymorphism and interchangeable algorithms.
+* The program records the start time using System.nanoTime().
+* The palindrome checking algorithm is executed.
+* The program records the end time using System.nanoTime().
+* The difference between start and end time gives the execution time.
+* The program prints the input string, result, and execution time.
+* This use case introduces basic benchmarking and algorithm performance measurement.
 * The main class used is PalindromeCheckerApp.
