@@ -1,6 +1,7 @@
 # PalindromeCheckerApp
 **UC10 - Case-Insensitive & Space-Ignored Palindrome**
 
+
 * The objective of UC10 is to check a palindrome ignoring spaces, symbols, and letter case.
 * The program starts from the main() method.
 * The user enters a sentence using the Scanner class.
